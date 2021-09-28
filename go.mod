@@ -1,4 +1,4 @@
-module bookingApp
+module github.com/lazazael/bookingApp
 
 go 1.16
 
