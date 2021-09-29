@@ -13,7 +13,7 @@ import (
 
 var app config.AppConfig
 
-const portNumber string = ":8080"
+const portNumber string = ":8000"
 
 var session *scs.SessionManager
 
