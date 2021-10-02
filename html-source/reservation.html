@@ -72,31 +72,44 @@
 
 <!-- a container is split to 12 cols-->
 <div class="container">
-    <div class="row">
-        <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-        <div class="col">
-            <img src="images/marjors-suite.png" class="img-fluid mx-auto d-block room-image img-thumbnail" alt="room image">
-        </div>
-    </div>
-
 
     <div class="row">
-        <div class="col">
-            <h1 class="text-center em-4"><strong>Luxury Quarters</strong></h1>
-            <p>
-                this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text, this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text,this is text
-            </p>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h1 class="text-center em-4"><strong>Search for availability</strong></h1>
+
+            <!--where to send the form and what to do with it-->
+            <form action="reservation.html" method="get">
+                    <div class="row">
+                        <div class="col">
+                                <div class="form-group">
+                                    <label for="start_date" class="form-label">Starting date of reservation</label>
+                                    <input required type="date" class="form-control" id="start_date" name="start_date" min="2021-01-01" max="2023-01-01" aria-describedby="startDateHelp">
+                                    <small id="startHelp" class="form-text text-muted">Enter your starting date.</small>
+                                </div>
+                        </div>
+                        <div class="col">
+                                <div class="form-group">
+                                    <label for="end_date" class="form-label">Ending date of reservation</label>
+                                    <input required type="date" class="form-control" id="end_date" name="end_date" aria-describedby="startDateHelp">
+                                    <small id="endHelp" class="form-text text-muted">Enter your ending date.</small>
+                                </div>
+                        </div>
+                    </div>
+
+                <p>
+
+                </p>
+                <button type="submit" class="btn btn-primary">Search Availability</button>
+            </form>
+
         </div>
 
     </div>
-    <div class="row">
-        <div class="col text-center">
-            <a href="/make-reservation-bl" class="btn btn-primary btn-lg">Check Availability</a>
-        </div>
-    </div>
-
 
 </div>
+
+
 
 <div class="row my-footer">
     <div class="col">
@@ -112,8 +125,12 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
