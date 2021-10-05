@@ -116,17 +116,21 @@
 
                 <div class="row">
 
-                    <dic class="col">
+                    <div class="col">
 
                         <div class="row" id="reservation-dates">
                             <div class="col">
-                                <input required class="form-control" type="text" name="start" placeholder="Arrival">
+                                <label>
+                                    <input required class="form-control" type="text" name="start" placeholder="Arrival">
+                                </label>
                             </div>
                             <div class="col">
-                                <input required class="form-control" type="text" name="end" placeholder="Departure">
+                                <label>
+                                    <input required class="form-control" type="text" name="end" placeholder="Departure">
+                                </label>
                             </div>
                         </div>
-                    </dic>
+                    </div>
                 </div>
 
                 <hr>
@@ -176,8 +180,8 @@
 
     let attention = Prompt();
 
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
         'use strict'
 
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -185,20 +189,20 @@
 
         // Loop over them and prevent submission
         Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-    }
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
 
-        form.classList.add('was-validated')
-    }, false)
-    })
+                    form.classList.add('was-validated')
+                }, false)
+            })
     })()
 
-        const elem = document.getElementById('reservation-dates');
-        const rangepicker = new DateRangePicker(elem, {
+    const elem = document.getElementById('reservation-dates');
+    const rangepicker = new DateRangePicker(elem, {
         // ...options
         format: "yyyy-mm-dd"
     });
@@ -214,8 +218,8 @@
     }
 
     //sweetalert prompts for user feedback
-    function Prompt(){
-        let toast = function(c){
+    function Prompt() {
+        let toast = function (c) {
             const {
                 msg = "",
                 icon = "success",
@@ -237,7 +241,7 @@
 
             Toast.fire({})
         }
-        let success = function(c){
+        let success = function (c) {
             const {
                 msg = "",
                 title = "",
@@ -251,7 +255,7 @@
                 footer: footer,
             })
         }
-        let error = function(c){
+        let error = function (c) {
             const {
                 msg = "",
                 title = "",
@@ -265,15 +269,14 @@
                 footer: footer,
             })
         }
-        return{
+        return {
             toast: toast,
-            success:success,
+            success: success,
             error: error,
         }
     }
 
     document.getElementById("colorButton").addEventListener("click", function () {
-            //notifyModal("button", "<strong>what</strong>","error","what text for the button")
         attention.error({msg: "Hello, world"});
 
     })
