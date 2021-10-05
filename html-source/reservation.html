@@ -213,22 +213,68 @@
         })
     }
 
+    //sweetalert prompts for user feedback
     function Prompt(){
-        let toast = function(){
+        let toast = function(c){
+            const {
+                msg = "",
+                icon = "success",
+                position = "top-end",
+            } = c;
+            const Toast = Swal.mixin({
+                toast: true,
+                title: msg,
+                position: position,
+                icon: icon,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
+            Toast.fire({})
         }
-        let success = function(){
+        let success = function(c){
+            const {
+                msg = "",
+                title = "",
+                footer = "",
+            } = c;
 
+            Swal.fire({
+                icon: 'success',
+                title: title,
+                text: msg,
+                footer: footer,
+            })
+        }
+        let error = function(c){
+            const {
+                msg = "",
+                title = "",
+                footer = "",
+            } = c;
+
+            Swal.fire({
+                icon: 'error',
+                title: title,
+                text: msg,
+                footer: footer,
+            })
         }
         return{
             toast: toast,
-            success:success
+            success:success,
+            error: error,
         }
     }
 
     document.getElementById("colorButton").addEventListener("click", function () {
             //notifyModal("button", "<strong>what</strong>","error","what text for the button")
-        attention.toast()
+        attention.error({msg: "Hello, world"});
 
     })
 
