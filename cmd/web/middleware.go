@@ -10,7 +10,8 @@ import (
 		fmt.Println("pagehit")
 		next.ServeHTTP(w, r)
 	})
-}*/
+}
+*/
 
 //NoSurf adds CSRF protection to every POST request
 func NoSurf(next http.Handler) http.Handler {

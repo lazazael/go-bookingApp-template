@@ -19,7 +19,8 @@ var session *scs.SessionManager
 
 func main() {
 
-	//app.InProduction set this true in production
+	//app.InProduction set false for development,
+	//true in production
 	app.InProduction = false
 
 	session = scs.New()

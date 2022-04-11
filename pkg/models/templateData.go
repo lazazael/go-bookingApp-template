@@ -5,8 +5,8 @@ type TemplateData struct {
 	StringMap map[string]string
 	IntMap    map[string]int
 	FloatMap  map[string]float32
-	Data      map[string]interface{}
-	CSRFToken string //Cross-Site Request Forgery Token (security token for handling tokens)
+	Data      map[string]any //interface{}
+	CSRFToken string         //Cross-Site Request Forgery Token (security token for handling tokens)
 
 	Flash   string
 	Warning string

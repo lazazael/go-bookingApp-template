@@ -57,14 +57,6 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 	if err != nil {
 		log.Println("error wringing template to browser", err)
 	}
-
-	/*	parsedTemplate, _ := template.ParseFiles("./templates/" + tmpl)
-
-		err = parsedTemplate.Execute(w, nil)
-		if err != nil {
-			fmt.Println("error parsing template:", err)
-			return
-		}*/
 }
 
 //CreateTemplateCache creates a cache of available templates from the templates directory
