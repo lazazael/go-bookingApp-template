@@ -2,8 +2,8 @@ package render
 
 import (
 	"bytes"
-	"github.com/lazazael/bookingApp/pkg/config"
-	"github.com/lazazael/bookingApp/pkg/models"
+	"github.com/lazazael/go-bookingApp-template/pkg/config"
+	"github.com/lazazael/go-bookingApp-template/pkg/models"
 	"html/template"
 	"log"
 	"net/http"
@@ -15,7 +15,7 @@ var functions = template.FuncMap{}
 
 var app *config.AppConfig
 
-//NewTemplates sets the config  for the template cache
+//NewTemplates sets the config for the template package
 func NewTemplates(a *config.AppConfig) {
 	app = a
 }
@@ -38,14 +38,9 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 		tc, _ = CreateTemplateCache()
 	}
 
-	/*	_, err := RenderTemplateTest(w)
-		if err != nil {
-			fmt.Println("error getting template cache:", err)
-		}*/
-
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Fatal("could not get template from template cache")
+		log.Fatal("could not get template from template cache:")
 	}
 	buf := new(bytes.Buffer)
 
@@ -59,7 +54,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 	}
 }
 
-//CreateTemplateCache creates a cache of available templates from the templates directory
+//CreateTemplateCache creates a hashmap as cache of available templates from the templates directory
 func CreateTemplateCache() (map[string]*template.Template, error) {
 
 	myTemplateCache := map[string]*template.Template{}
@@ -71,7 +66,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 
 	for _, page := range pages {
 		name := filepath.Base(page)
-		//log.Println("page is currently",page)
+		//ts is a template set
 		ts, err := template.New(name).Funcs(functions).ParseFiles(page)
 		if err != nil {
 			return myTemplateCache, err
@@ -80,7 +75,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 		if err != nil {
 			return myTemplateCache, err
 		}
-
+		//
 		if len(matches) > 0 {
 			ts, err = ts.ParseGlob("./templates/*.layout.tmpl")
 			if err != nil {

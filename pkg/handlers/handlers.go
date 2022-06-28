@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"github.com/lazazael/bookingApp/pkg/config"
-	"github.com/lazazael/bookingApp/pkg/models"
-	"github.com/lazazael/bookingApp/pkg/render"
+	"github.com/lazazael/go-bookingApp-template/pkg/config"
+	"github.com/lazazael/go-bookingApp-template/pkg/models"
+	"github.com/lazazael/go-bookingApp-template/pkg/render"
 	"net/http"
 )
 
@@ -44,7 +44,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	//perform logic
 	stringMap := make(map[string]string)
-	stringMap["test"] = "LoLo again"
+	stringMap["test"] = "test string on about page"
 
 	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
 	stringMap["remote_ip"] = remoteIP

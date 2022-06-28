@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/alexedwards/scs/v2"
-	"github.com/lazazael/bookingApp/pkg/config"
-	"github.com/lazazael/bookingApp/pkg/handlers"
-	"github.com/lazazael/bookingApp/pkg/render"
+	"github.com/lazazael/go-bookingApp-template/pkg/config"
+	"github.com/lazazael/go-bookingApp-template/pkg/handlers"
+	"github.com/lazazael/go-bookingApp-template/pkg/render"
 	"log"
 	"net/http"
 	"time"
@@ -17,10 +17,10 @@ const portNumber string = ":8000"
 
 var session *scs.SessionManager
 
+//main is the application function
 func main() {
 
-	//app.InProduction set false for development,
-	//true in production
+	//app.InProduction set false for development
 	app.InProduction = false
 
 	session = scs.New()

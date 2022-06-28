@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/lazazael/bookingApp/pkg/config"
-	"github.com/lazazael/bookingApp/pkg/handlers"
+	"github.com/lazazael/go-bookingApp-template/pkg/config"
+	"github.com/lazazael/go-bookingApp-template/pkg/handlers"
 	"net/http"
 )
 
